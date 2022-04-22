@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -21,12 +21,34 @@
     </header>
     <main>
       <section class="add-note">
-        <button class="btn-add-note">Adicionar Nota</button>
+        <button
+          class="btn-add-note"
+          data-bs-toggle="modal"
+          data-bs-target="#exampleModal"
+        >
+          Adicionar Nota
+        </button>
       </section>
       <section class="notes">
         <div class="block-notes">
           <h2 class="tag-pending">A Fazer</h2>
-          <div class="content-notes note-pending"></div>
+          <div class="content-notes note-pending">
+            <div class="note">
+              <section>
+                <p>Titulo</p>
+                <small>Data</small>
+              </section>
+              <small>Descrição</small>
+              <fieldset>
+                <label for="Status">Status</label>
+                <select name="status" id="status">
+                  <option value="pending">A Fazer</option>
+                  <option value="inProgress">Em Progresso</option>
+                  <option value="success">Concluido</option>
+                </select>
+              </fieldset>
+            </div>
+          </div>
         </div>
         <div class="block-notes">
           <h2 class="tag-inProgress">Em Progresso</h2>
@@ -38,6 +60,63 @@
         </div>
       </section>
     </main>
+    <!-- MODAL -->
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Nova Nota</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Cancelar"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="mb-3">
+              <label for="exampleFormControlInput1" class="form-label"
+                >Titulo</label
+              >
+              <input type="text" class="form-control" id="tituloNota" />
+            </div>
+            <div class="mb-3">
+              <label for="exampleFormControlTextarea1" class="form-label"
+                >Descrição</label
+              >
+              <textarea
+                class="form-control"
+                id="descricaoNota"
+                rows="3"
+              ></textarea>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Cancelar
+            </button>
+            <button
+              type="button"
+              class="btn btn-primary"
+              id="btn-adc-note"
+              data-bs-dismiss="modal"
+            >
+              Adicionar Nota
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
       integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
