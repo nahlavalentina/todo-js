@@ -8,7 +8,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--secundary);
+  background-color: var(--secondary);
 }
 
 header > h1 {
